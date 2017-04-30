@@ -1,7 +1,7 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe WeatherReporter do
-  it "has a version number" do
-    expect(WeatherReporter::VERSION).not_to be nil
+  it 'has a version number' do
+    expect(WeatherReporter::VERSION).not_to be('0.1.0')
   end
 end
