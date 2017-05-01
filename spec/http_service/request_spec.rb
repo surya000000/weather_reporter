@@ -3,13 +3,12 @@ module WeatherReporter
   module HTTPService
     RSpec.describe Request do
       require 'pry'
+
       let(:data) {{city: "kathmandu"}}
       let(:config) {WeatherReporter::Configuration.new.read_file }
       let(:request) do
         WeatherReporter::HTTPService::Request.new({city: "kathmandu"}, config)
       end
-
-
 
       describe '.initialize' do
         it 'set data of the object from user' do
