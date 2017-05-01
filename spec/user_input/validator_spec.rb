@@ -15,7 +15,7 @@ module WeatherReporter
           input = validator_class.new(%w{-c kathmandu -d 10})
           expect do
             raise input.validate
-          end.to(raise_error.with_message('Please enter a valid flag'))
+          end.to(raise_error.with_message('Please enter a valid flag or Enter -help for more details'))
         end
       end
 
