@@ -5,7 +5,7 @@ module WeatherReporter
   class Configuration
     CONFIG_FILE_PATH = 'lib/weather_reporter/config/config.yml'
 
-    def initialize(file = CONFIG_FILE_PATH)
+    def initialize(file = { path: CONFIG_FILE_PATH })
       @file_path = file[:path]
     end
 
