@@ -24,6 +24,12 @@ module WeatherReporter
         it 'gets reponce form the API call' do
           expect(request.report.class).to(eq(HTTParty::Response))
         end
+
+        it 'get data of the given city' do
+          json = JSON.parse(File.read("spec/fixtures/weather.json"))
+          responce =  JSON.parse(request.report)
+          expect(responce['location']['name']).to eq(json['location']['name'])
+        end
       end
 
     end
