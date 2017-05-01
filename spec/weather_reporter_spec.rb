@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe WeatherReporter do
+RSpec.describe WeatherReporter do
   it 'has a version number' do
     expect(WeatherReporter::VERSION).not_to be('0.1.0')
   end
