@@ -6,6 +6,8 @@ require 'weather_reporter/error/invalid_flag'
 require 'weather_reporter/error/invalid_file'
 require 'weather_reporter/user_input/validator'
 require 'weather_reporter/user_input/request_data'
+require 'weather_reporter/output_formatter'
+
 require 'pry'
 
 module WeatherReporter
