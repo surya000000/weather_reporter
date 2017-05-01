@@ -12,7 +12,7 @@ module WeatherReporter
 
       describe '#validate_input' do
         it 'throws exception for invalid input' do
-          validate_input = validator_class.new(%w{-city kathmandu -d 10})
+          validate_input = validator_class.new(%w{-c kathmandu -d 10})
           expect do
             raise validate_input.validate_input
           end.to(raise_error.with_message('Please enter a valid flag'))
