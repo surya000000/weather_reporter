@@ -1,10 +1,16 @@
+require 'pry'
+require 'httparty'
 module WeatherReporter
   module HTTPService
     class Request
-      def initialize
+      attr_reader :data, :configuration
+      def initialize(data, config_object)
+        @configuration = config_object.read_file
+        @data = data
       end
 
       def report
+        responce = HTTParty.get("http://api.apixu.com/v1/current.json?key=5f7c4e53a0d645d382a14830173004&q=Kathmandu")
       end
     end
   end
