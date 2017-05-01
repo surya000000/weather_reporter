@@ -3,7 +3,7 @@ require 'httparty'
 module WeatherReporter
   module HTTPService
     class Request
-      attr_reader :data
+      attr_reader :data, :configuration
       def initialize(data, config_object)
         @configuration = config_object.read_file
         @data = data
