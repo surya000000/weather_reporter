@@ -10,8 +10,23 @@ module WeatherReporter
       end
 
       def report
-        responce = HTTParty.get("http://api.apixu.com/v1/current.json?key=5f7c4e53a0d645d382a14830173004&q=Kathmandu")
+        responce = HTTParty.get(url)
       end
+
+      private
+
+      def url
+        base_url = @configuration["APIXU"]["BASE_URL"]
+        key = @configuration["APIXU"]["API_KEY"]
+        request_type = @configuration["APIXU"]["REQUEST_TYPE"]
+        data = @data
+        if data[:day]
+          base_url + request_type["forcast"] + '?key='+ key + '&q=' + data[:city] + 'day=' + data[:day]
+        else
+          base_url + request_type["current"] + '?key='+ key + '&q=' + data[:city]
+        end
+      end
+
     end
   end
 end
