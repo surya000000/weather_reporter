@@ -5,20 +5,24 @@ module WeatherReporter
       require 'pry'
 
       let(:data) {{city: "kathmandu"}}
-      let(:config) {WeatherReporter::Configuration.new.read_file }
+      let(:config) {WeatherReporter::Configuration.new }
       let(:request) do
         WeatherReporter::HTTPService::Request.new({city: "kathmandu"}, config)
       end
 
       describe '.initialize' do
         it 'set data of the object from user' do
-          expect(request.data).to eq(data)
+          expect(request.data).to(eq(data))
+        end
+
+        it 'carries valid configuration' do
+          expect(request.configuration).to(eq(config.read_file))
         end
       end
 
       describe '#report' do
-        it 'send data to the api' do
-          expect(request.report).to eq(0)
+        it 'gets reponce form the API call' do
+          expect(request.report.class).to(eq(HTTParty::Response))
         end
       end
 
