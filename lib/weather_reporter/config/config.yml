@@ -1,3 +1,6 @@
 APIXU:
   API_KEY: 5f7c4e53a0d645d382a14830173004
   BASE_URL: http://api.apixu.com/v1/
+  REQUEST_TYPE:
+    current: current.json
+    forcast: forecast.json
