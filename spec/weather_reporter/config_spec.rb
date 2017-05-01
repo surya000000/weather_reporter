@@ -27,8 +27,8 @@ module WeatherReporter
 
       describe '#read_file' do
         it 'gets file object as hash' do
-          expect(config_class.new(path: file_path).read_file['API_KEY']['APIXU'])
-                .to(eq(YAML.load_file(config_class::CONFIG_FILE_PATH)['API_KEY']['APIXU']))
+          expect(config_class.new(path: file_path).read_file['APIXU']['API_KEY'])
+                .to(eq(YAML.load_file(config_class::CONFIG_FILE_PATH)['APIXU']['API_KEY']))
         end
       end
     end
