@@ -26,7 +26,7 @@ module WeatherReporter
 
     def valid_yaml_syntax
       unless file.instance_of?(Hash)
-        raise WeatherReporter::Error::InvalidFile, 'Invalid file format'
+        raise WeatherReporter::Error::InvalidFile, 'Invalid syntax in yaml'
       else
         true
       end
