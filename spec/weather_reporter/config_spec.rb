@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+require 'yaml'
 # Test cases for class WeatherReporter::Config
 module WeatherReporter
   # Checks the return value of file_path method is a location of file
@@ -27,7 +27,8 @@ module WeatherReporter
 
       describe '#read_file' do
         it 'gets file object as hash' do
-          expect(config_class.new(path: file_path).read_file).to(eq())
+          expect(config_class.new(path: file_path).read_file['API_KEY']['APIXU'])
+                .to(eq(YAML.load_file(config_class::CONFIG_FILE_PATH)['API_KEY']['APIXU']))
         end
       end
     end
