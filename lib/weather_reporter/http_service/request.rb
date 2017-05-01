@@ -10,7 +10,7 @@ module WeatherReporter
       end
 
       def report
-        responce = HTTParty.get(url)
+        HTTParty.get(url)
       end
 
       private
