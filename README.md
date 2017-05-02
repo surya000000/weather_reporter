@@ -22,7 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+![alt text](https://preview.ibb.co/hK7EbQ/Screen_Shot_2017_05_02_at_4_52_01_PM.png)
 
 ## Development
 
