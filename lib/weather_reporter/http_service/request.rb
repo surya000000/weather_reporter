@@ -5,17 +5,17 @@ module WeatherReporter
     class Request
       attr_reader :data, :configuration
 
-      KEY = 'key=', CITY = '&q='
+      CITY = '&q='
 
-      private_constant :KEY, :CITY
+      private_constant :CITY
 
       def initialize(data, config_object)
         @configuration = config_object.read_file['APIXU']
         @data = data
       end
 
-      def report
-        response = HTTParty.get(api_url)
+      def get_response
+        HTTParty.get(api_url)
       end
 
       private
@@ -25,11 +25,11 @@ module WeatherReporter
       end
 
       def generate_forecast_url
-        "#{base_url}#{request_type["forcast"]}?#{KEY}#{api_key}#{CITY}#{@data[:city]}&day=#{@data[:day]}"
+        "#{base_url}#{request_type["forcast"]}?key=#{api_key}#{CITY}#{@data[:city]}&day=#{@data[:day]}"
       end
 
       def generate_current_url
-        "#{base_url}#{request_type['current']}?#{KEY}#{api_key}#{CITY}#{@data[:city]}"
+        "#{base_url}#{request_type['current']}?key=#{api_key}#{CITY}#{@data[:city]}"
       end
 
       def request_type
