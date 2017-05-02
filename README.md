@@ -1,6 +1,6 @@
 # WeatherReporter
 
-![alt text](https://lh4.ggpht.com/A4CWApa13xD_r-lWlJ-YZmqijOPeDdPurke-1-__QCoixySQAXxyte3iNbxFwrrQMnQ=w300)
+![alt text](http://www.megaicons.net/static/img/icons_sizes/8/178/256/weather-chance-of-storm-icon.png)
 
 
 
