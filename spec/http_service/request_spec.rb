@@ -4,10 +4,10 @@ module WeatherReporter
     RSpec.describe Request do
       require 'pry'
 
-      let(:data) {{city: "kathmandu"}}
-      let(:config) {WeatherReporter::Configuration.new }
+      let(:data) { { city: 'kathmandu' } }
+      let(:config) { WeatherReporter::Configuration.new }
       let(:request) do
-        WeatherReporter::HTTPService::Request.new({city: "kathmandu"}, config)
+        WeatherReporter::HTTPService::Request.new({ city: 'kathmandu' }, config)
       end
 
       describe '.initialize' do
@@ -16,13 +16,13 @@ module WeatherReporter
         end
 
         it 'carries valid configuration' do
-          expect(request.configuration).to(eq(config.read_file))
+          expect(request.configuration).to(eq(config.read_file['APIXU']))
         end
       end
 
-      describe '#report' do
+      describe '#get_data' do
         it 'gets reponce form the API call' do
-          expect(request.report.class).to(eq(HTTParty::Response))
+          expect(request.get_response.class).to(eq(HTTParty::Response))
         end
       end
 
