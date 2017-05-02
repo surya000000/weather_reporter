@@ -57,7 +57,8 @@ module WeatherReporter
         'Patchy rain possible': light_rain,
         'Light snow': light_snow,
         'Clear': clear,
-        'Moderate or heavy snow showers': snow
+        'Moderate or heavy snow showers': snow,
+        'Fog': fog
       }
     end
   end
