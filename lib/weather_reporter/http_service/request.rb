@@ -10,7 +10,7 @@ module WeatherReporter
       private_constant :KEY, :CITY
 
       def initialize(data, config_object)
-        @configuration = config_object.read_file["APIXU"]
+        @configuration = config_object.read_file['APIXU']
         @data = data
       end
 
@@ -33,15 +33,15 @@ module WeatherReporter
       end
 
       def request_type
-        @configuration["REQUEST_TYPE"]
+        @configuration['REQUEST_TYPE']
       end
 
       def base_url
-        @configuration["BASE_URL"]
+        @configuration['BASE_URL']
       end
 
       def api_key
-        @configuration["API_KEY"]
+        @configuration['API_KEY']
       end
     end
   end
