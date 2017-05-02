@@ -1,6 +1,6 @@
 module WeatherReporter
-  class OutputFormatter
-    class << self
+  module OutputFormatter
+    # class << self
       def sunny
         '
           \  /
@@ -17,7 +17,15 @@ module WeatherReporter
        ‘ ‘ ‘ ‘"
       end
 
-      def partial_rainy
+      def mist
+        "\t .-.
+        (   ).
+        (___(__)
+        ‘ ‘ ‘ ‘"
+
+      end
+
+      def light_rain
         "\t  _`/"".-.
           ,\_(   ).
            /(___(__)
@@ -25,12 +33,12 @@ module WeatherReporter
           ‘ ‘ ‘ ‘ "
       end
 
-      def partial_cloudy
+      def partly_cloudy
          '          \  /
         _ /"".-.
           \_(   ).
           /(___(__)'
       end
-    end
+    # end
   end
 end
