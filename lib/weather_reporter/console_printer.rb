@@ -10,8 +10,19 @@ module WeatherReporter
     end
 
     def print_to_console
-        return error if error
-       puts(condition_map[:"#{weather_condition}"])
+      return error if error
+      output
+    end
+
+    def output
+      symbols = condition_map[:"#{weather_condition}"]
+      "\e[1m\n#{symbols}\n
+         #{@weather_obj.location.name}  |  #{@weather_obj.location.country}\n
+         #{@weather_obj.location.localtime}\n
+         Humidity: #{@weather_obj.current.humidity}% | #{weather_condition}\n
+         Temperature: #{@weather_obj.current.temp_c} Celcius | #{@weather_obj.current.temp_f } Fahrenheit
+      \e[0m
+      "
     end
 
     def weather_condition
@@ -27,7 +38,7 @@ module WeatherReporter
     end
 
     def empty_object
-      ERROR_MESSAGE unless @weather_obj.location.current.respond_to?(:text)
+      ERROR_MESSAGE unless @weather_obj.current.respond_to?(:condition)
     end
 
     def error_message
