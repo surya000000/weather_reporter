@@ -30,14 +30,16 @@ module WeatherReporter
       data = @weather_obj.forecast.forecastday
       day = data.first.day #max,min temp of day
       hour = data.first.hour
-      hour[0..3].each do |h|
+      hour.values_at(7,15,23).each do |h|
         puts output_forecast(h)
+        # binding.pry
       end
     end
 
     def output_forecast(hour)
       symbols = condition_map[:"#{hour.condition.text}"]
       "\e[1m\n#{symbols}\n
+         Time: #{hour.time}
          Humidity: #{hour.humidity}% | #{hour.condition.text}\n
          Temperature: #{hour.temp_c} Celcius | #{hour.temp_f } Fahrenheit
       \e[0m
