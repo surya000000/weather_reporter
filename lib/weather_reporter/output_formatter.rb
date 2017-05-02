@@ -14,7 +14,7 @@ module WeatherReporter
         (   ).
         (___(__)
         ‘ ‘ ‘ ‘
-       ‘ ‘ ‘ ‘"
+       "
       end
 
       def light_rain
@@ -31,6 +31,10 @@ module WeatherReporter
           \_(   ).
           /(___(__)'
       end
-    # end
+
+      def mist
+      '_ - _ - _
+      _ - _ - _ -'            
+      end
   end
 end
