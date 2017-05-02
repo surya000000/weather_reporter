@@ -75,7 +75,11 @@ module WeatherReporter
         "Partly cloudy": partly_cloudy,
         "Light rain": light_rain,
         "Light rain shower": light_rain,
-        'Patchy rain possible': light_rain
+        'Patchy rain possible': light_rain,
+        'Light snow': light_snow,
+        'Clear': clear,
+        'Moderate or heavy snow showers': snow,
+        'Fog': fog
       }
     end
   end
