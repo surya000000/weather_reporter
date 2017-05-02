@@ -27,7 +27,7 @@ module WeatherReporter
 
         it 'get data of the given city' do
           json = JSON.parse(File.read("spec/fixtures/weather.json"))
-          responce =  JSON.parse(request.report)
+          responce =  JSON.parse(request.get_response)
           expect(responce['location']['name']).to eq(json['location']['name'])
         end
       end

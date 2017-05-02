@@ -32,7 +32,7 @@ module WeatherReporter
   end
 
   def get_api_response
-    WeatherReporter::HTTPService::Response.new(call_to_api)
+    WeatherReporter::HTTPService::Response.new(call_to_api).data
   end
 
   def take_user_input
