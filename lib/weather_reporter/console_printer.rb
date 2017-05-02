@@ -11,7 +11,8 @@ module WeatherReporter
 
     def print_to_console
       return error if error
-      output
+      puts output
+      forecast
     end
 
     def output
@@ -24,6 +25,25 @@ module WeatherReporter
       \e[0m
       "
     end
+
+    def forecast
+      data = @weather_obj.forecast.forecastday
+      day = data.first.day #max,min temp of day
+      hour = data.first.hour
+      hour[0..3].each do |h|
+        puts output_forecast(h)
+      end
+    end
+
+    def output_forecast(hour)
+      symbols = condition_map[:"#{hour.condition.text}"]
+      "\e[1m\n#{symbols}\n
+         Humidity: #{hour.humidity}% | #{hour.condition.text}\n
+         Temperature: #{hour.temp_c} Celcius | #{hour.temp_f } Fahrenheit
+      \e[0m
+      "
+    end
+
 
     def weather_condition
       @weather_obj.current.condition.text
