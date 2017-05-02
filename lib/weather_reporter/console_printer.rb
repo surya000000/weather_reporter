@@ -49,8 +49,9 @@ module WeatherReporter
     def condition_map
       {
         "Sunny": sunny,
+        "Cloudy": cloudy,
         "Overcast": cloudy,
-        "Mist": partly_cloudy,
+        "Mist": mist,
         "Partly cloudy": partly_cloudy,
         "Light rain": light_rain,
         "Light rain shower": light_rain,
