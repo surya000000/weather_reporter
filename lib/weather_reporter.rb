@@ -9,7 +9,7 @@ require 'weather_reporter/user_input/request_data'
 require 'weather_reporter/http_service/request'
 require 'weather_reporter/http_service/response'
 require 'weather_reporter/output_formatter'
-
+require 'weather_reporter/console_printer'
 require 'pry'
 
 module WeatherReporter
@@ -33,6 +33,10 @@ module WeatherReporter
 
   def get_api_response
     WeatherReporter::HTTPService::Response.new(call_to_api).data
+  end
+
+  def console_printer
+    WeatherReporter::ConsolePrinter.new(get_api_response).print_to_console
   end
 
   def take_user_input
