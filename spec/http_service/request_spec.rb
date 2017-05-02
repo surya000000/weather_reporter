@@ -2,7 +2,6 @@ require 'spec_helper'
 module WeatherReporter
   module HTTPService
     RSpec.describe Request do
-      require 'pry'
 
       let(:data) { { city: 'kathmandu' } }
       let(:config) { WeatherReporter::Configuration.new }

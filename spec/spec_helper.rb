@@ -1,7 +1,9 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "weather_reporter"
-require "helpers/weather_symbol"
-require "webmock/rspec"
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'weather_reporter'
+require 'helpers/weather_symbol'
+require 'webmock/rspec'
+require 'pry'
+
 WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
