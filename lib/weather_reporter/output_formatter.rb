@@ -49,5 +49,11 @@ module WeatherReporter
          (_,  \ ) ,_)
            '-'--`--' "
       end
+
+      def fog
+        "\t _ - _ - _ -
+         _ - _ - _
+         _ - _ - _ -"
+      end
   end
 end
