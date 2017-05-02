@@ -21,11 +21,11 @@ module WeatherReporter
       private
 
       def api_url
-        @data[:day] ? generate_forecast_url : generate_current_url
+        @data[:forecast] ? generate_forecast_url : generate_current_url
       end
 
       def generate_forecast_url
-        "#{base_url}#{request_type["forcast"]}?key=#{api_key}#{CITY}#{@data[:city]}&day=#{@data[:day]}"
+        "#{base_url}#{request_type["forcast"]}?key=#{api_key}#{CITY}#{@data[:city]}"
       end
 
       def generate_current_url

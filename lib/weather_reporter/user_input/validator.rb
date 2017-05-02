@@ -2,7 +2,7 @@ module WeatherReporter
   module UserInput
     class Validator
 
-      VALID_FLAGS = %w{-city -day -help}
+      VALID_FLAGS = %w{-city -forecast -help}
 
       ERROR_MESSAGE = %Q{Please enter a valid flag or Enter -help for more details}
 

@@ -22,7 +22,7 @@ module WeatherReporter
         request_data = {}
         @data.each do |data|
           request_data[:city] = data[1] if data[0] == '-city'
-          request_data[:day] = data[1] if data[0] == '-day'
+          request_data[:forecast] = true if data[0] == '-forecast'
         end
         request_data
       end
