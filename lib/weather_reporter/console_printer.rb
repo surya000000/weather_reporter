@@ -50,7 +50,7 @@ module WeatherReporter
       {
         "Sunny": sunny,
         "Overcast": cloudy,
-        "Mist": mist,
+        "Mist": partly_cloudy,
         "Partly cloudy": partly_cloudy,
         "Light rain": light_rain,
         "Light rain shower": light_rain,

@@ -17,14 +17,6 @@ module WeatherReporter
        ‘ ‘ ‘ ‘"
       end
 
-      def mist
-        "\t .-.
-        (   ).
-        (___(__)
-        ‘ ‘ ‘ ‘"
-
-      end
-
       def light_rain
         "\t  _`/"".-.
           ,\_(   ).
