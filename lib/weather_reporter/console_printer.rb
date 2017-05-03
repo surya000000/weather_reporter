@@ -58,7 +58,9 @@ module WeatherReporter
         'Light snow': light_snow,
         'Clear': clear,
         'Moderate or heavy snow showers': snow,
-        'Fog': fog
+        'Fog': fog,
+        'Thundery outbreaks possible': light_thunder,
+        'Thundery': thunder_storm
       }
     end
   end
