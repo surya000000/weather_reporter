@@ -12,6 +12,7 @@ module WeatherReporter
     def print_to_console
       return error if error
       puts current_weather
+      puts forecast_summary if @weather_obj.forecast
       forecast_weather if @weather_obj.forecast
     end
 
@@ -26,25 +27,43 @@ module WeatherReporter
       "
     end
 
+    def print_report(report)
+      symbols = condition_map[:"#{report.condition.text}"]
+      "\e[1m\n#{symbols}\n
+      Time: #{report.time}\n
+      Humidity: #{report.humidity}% | #{report.condition.text}\n
+      Temperature: #{report.temp_c} Celcius | #{report.temp_f } Fahrenheit
+      \e[0m
+        "
+    end
+
     def forecast_weather
-      forecast_data = @weather_obj.forecast.forecastday
-      forecast_summary = forecast_data.first.day #max,min temp of day
       hourly_reports = forecast_data.first.hour
       hourly_reports.values_at(7,15,23).each do |report|
         puts print_report(report)
       end
     end
 
-    def print_report(report)
-      symbols = condition_map[:"#{report.condition.text}"]
-      "\e[1m\n#{symbols}\n
-         Time: #{report.time}
-         Humidity: #{report.humidity}% | #{report.condition.text}\n
-         Temperature: #{report.temp_c} Celcius | #{report.temp_f } Fahrenheit
+    def forecast_summary
+      summary = forecast_data.first.day #max,min temp of day
+      symbols = condition_map[ :"#{summary.condition.text}"]
+      "#{'-'*30}| SUMMARY |#{'-'*30}
+      \e[1m\n#{symbols}\n
+      Temp in Celcius: #{summary.maxtemp_c} - #{summary.mintemp_c}(max - min) | #{summary.avgtemp_c} (avg)\n
+      Avg. Humidity: #{summary.avghumidity}% | #{summary.condition.text}\n
+      Sunrise: #{forecast_astro.sunrise} | Sunset: #{forecast_astro.sunset}\n
+      Moonrise: #{forecast_astro.moonrise} | Moonset: #{forecast_astro.moonset}
       \e[0m
-      "
+#{'-'*30}| FORECAST |#{'-'*30} "
     end
 
+    def forecast_astro
+      forecast_data.first.astro
+    end
+
+    def forecast_data
+       @weather_obj.forecast.forecastday
+    end
 
     def weather_condition
       @weather_obj.current.condition.text
