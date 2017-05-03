@@ -50,6 +50,23 @@ module WeatherReporter
            '-'--`--' "
       end
 
+      def thunder_storm
+        '         \  /
+        --⚪  .---.
+         /.-(     ).
+          (___.__)__)
+          ⚡‘ ‘⚡‘‘⚡‘‘
+          ⚡‘ ‘⚡‘‘⚡‘‘'
+      end
+
+      def light_thunder
+        '         \  /
+        --⚪  .---.
+         /.-(     ).
+          (___.__)__)
+          ⚡‘ ‘⚡‘‘⚡‘‘'
+      end
+
       def fog
         "\t _ - _ - _ -
          _ - _ - _
