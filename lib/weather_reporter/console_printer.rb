@@ -11,11 +11,11 @@ module WeatherReporter
 
     def print_to_console
       return error if error
-      puts output
-      forecast if @weather_obj.forecast
+      puts current_weather
+      forecast_weather if @weather_obj.forecast
     end
 
-    def current_output
+    def current_weather
       symbols = condition_map[:"#{weather_condition}"]
       "\e[1m\n#{symbols}\n
          #{@weather_obj.location.name}  |  #{@weather_obj.location.country}\n
@@ -26,7 +26,7 @@ module WeatherReporter
       "
     end
 
-    def forecast_output
+    def forecast_weather
       forecast_data = @weather_obj.forecast.forecastday
       forecast_summary = forecast_data.first.day #max,min temp of day
       hourly_reports = forecast_data.first.hour
