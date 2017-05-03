@@ -5,8 +5,8 @@ module WeatherReporter
     class Response
       attr_reader :data
 
-      def initialize(data)
-        @data = data
+      def initialize(raw_data)
+        @data = raw_data
       end
 
       def data

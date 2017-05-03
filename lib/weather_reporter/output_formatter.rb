@@ -8,7 +8,7 @@ module WeatherReporter
         '
       end
 
-      def partly_cloudy
+     def partly_cloudy
         '         \  /
         --⚪  .---.
          /.-(     ).
@@ -72,5 +72,11 @@ module WeatherReporter
          _ - _ - _
          _ - _ - _ -"
       end
+
+      def mist
+      '_ - _ - _
+      _ - _ - _ -'
+      end
+
   end
 end
