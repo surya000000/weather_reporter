@@ -13,7 +13,7 @@ module WeatherReporter
                      'Clear'=> :clear, 'Moderate or heavy snow showers' => :snow,
                      'Fog' => :fog, 'Thundery outbreaks possible' => :light_thunder,
                      'Thundery' => :thunder_storm,
-                     'Moderate or heavy rain with thunder' => :thunder_storm
+                     'Moderate or heavy rain with thunder' => :heavy_rain_thunder
                     }.freeze
 
     def initialize(weather_obj)

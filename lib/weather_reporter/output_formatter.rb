@@ -59,6 +59,14 @@ module WeatherReporter
           ⚡‘ ‘⚡‘‘⚡‘‘'
       end
 
+      def heavy_rain_thunder
+        '            .---.
+          .(     ).
+          (___.__)__)
+          ⚡‘ ‘⚡‘‘⚡‘‘
+          ⚡‘ ‘⚡‘‘⚡‘‘'
+      end
+
       def light_thunder
         '         \  /
         --⚪  .---.
