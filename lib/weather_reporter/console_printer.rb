@@ -6,12 +6,14 @@ module WeatherReporter
     ERROR_MESSAGE = 'Sorry weather report cannot generated'.freeze
 
     WEATHER_TEXT =  {
-                     'Sunny': :sunny, 'Cloudy': :cloudy, 'Overcast': :cloudy, 'Mist': :mist,
-                     'Partly cloudy': :partly_cloudy, 'Light rain': :light_rain,
-                     'Light rain shower': :light_rain,
-                     'Patchy rain possible': :light_rain, 'Light snow': :light_snow, 'Clear': :clear,
-                     'Moderate or heavy snow showers': :snow, 'Fog': :fog,
-                     'Thundery outbreaks possible': :light_thunder, 'Thundery': :thunder_storm
+                     'Sunny' => :sunny, 'Cloudy' => :cloudy, 'Overcast' => :cloudy,
+                     'Mist' => :mist, 'Partly cloudy' => :partly_cloudy,
+                     'Light rain' =>  :light_rain, 'Light rain shower' => :light_rain,
+                     'Patchy rain possible' => :light_rain, 'Light snow' => :light_snow,
+                     'Clear'=> :clear, 'Moderate or heavy snow showers' => :snow,
+                     'Fog' => :fog, 'Thundery outbreaks possible' => :light_thunder,
+                     'Thundery' => :thunder_storm,
+                     'Moderate or heavy rain with thunder' => :thunder_storm
                     }.freeze
 
     def initialize(weather_obj)
@@ -61,15 +63,15 @@ module WeatherReporter
     end
 
     def current_symbols
-      self.send(WEATHER_TEXT[weather_condition.to_sym])
+      self.send(WEATHER_TEXT[weather_condition])
     end
 
     def report_sumbols
-      self.send(WEATHER_TEXT[report.condition.text.to_sym])
+      self.send(WEATHER_TEXT[report.condition.text])
     end
 
     def forecast_symbols
-      self.send(WEATHER_TEXT[summary.condition.text.to_sym])
+      self.send(WEATHER_TEXT[summary.condition.text])
     end
 
     def summary
