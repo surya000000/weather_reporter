@@ -4,7 +4,7 @@ module WeatherReporter
     class Request
       attr_reader :data, :configuration
 
-      CITY = '&q='
+      CITY = '&q='.freeze
 
       private_constant :CITY
 
