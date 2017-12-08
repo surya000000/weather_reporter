@@ -38,7 +38,7 @@ module WeatherReporter
     end
 
     def print_report(report)
-      "\e[1m\n#{current_symbols}\n
+      "\e[1m\n#{current_symbols(report.condition.text)}\n
       Time: #{report.time}\n
       Humidity: #{report.humidity}% | #{report.condition.text}\n
       Temperature: #{report.temp_c} Celcius | #{report.temp_f } Fahrenheit
@@ -62,8 +62,9 @@ module WeatherReporter
       #{print_dash_30}| FORECAST |#{print_dash_30} "
     end
 
-    def current_symbols
-      self.send(WEATHER_TEXT[weather_condition])
+    def current_symbols(weather_text = nil)
+      weather_condition_text = weather_text ? weather_text : weather_condition
+      self.send(WEATHER_TEXT[weather_condition_text])
     end
 
     def report_sumbols
